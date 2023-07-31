@@ -1,9 +1,11 @@
-/*Fondo en negro*/
+/*Fondo en negro y centrar textos */
 body {
     background-color: black;
+    text-align: center;
 }
 
 /*Tipos de letra y efecto similar a neon*/
+a,
 h1,
 h2,
 h3 {
@@ -26,9 +28,8 @@ img {
     height: 100px;
 }
 
-/*Para ubicar el titulo a un costado de la imagen*/
-h1 {
-    position: relative;
-    top: -100px;
-    right: -100px;
+/* Centrar listas */
+ul {
+    text-align: left;
+    display: inline-block;
 }
