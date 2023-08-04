@@ -1,0 +1,11 @@
+#container {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#calculadora {
+    margin: 0 auto;
+}
