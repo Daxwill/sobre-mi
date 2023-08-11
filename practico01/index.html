@@ -11,20 +11,23 @@
 <body>
     <!--<div id="container"> -->
     <div id="calculadora">
-        <legend>La Calculadora</legend>
-        <label for="number01">Primer numero</label>
-        <input type="number">
+        <legend>Calculadora</legend>
+        <input type="text" id="n2" placeholder="Ingrese un numero">
         <select name="operaciones" id="operaciones" required>
+            <option selected disabled value="null">Eliga una operacion</option>
             <option value="suma">+</option>
             <option value="resta">-</option>
             <option value="multi">x</option>
             <option value="div">%</option>
         </select>
-        <label for="number02"> Segundo numero</label>
-        <input type="number">
-        <button type="button">Calcular</button>
+        <input type="text" id="n1" placeholder="Ingrese un numero">
+        <button type="button" id="botonCalc">Calcular</button>
+        <div>
+            <p id="resultado"></p>
+        </div>
     </div>
     <!--</div>-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
