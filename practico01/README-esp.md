@@ -115,6 +115,10 @@ El resultado es 3.1.
 El resultado es 3.434
 ```
 
+## Detalles adicionales
+
+_El boton "reiniciar" no funciona como se espera en el navegador Mozilla pero si en google chrome._
+
 ## Construido con 🛠️
 
 * HTML - Lenguaje de maquetado usado para la estructura
