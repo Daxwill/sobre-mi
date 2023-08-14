@@ -1,9 +1,9 @@
 function calcular() {
     //Ingreso de datos
     var n1 = document.getElementById("n1").value;
-    n1 = parseFloat(n1);
+    //n1 = parseFloat(n1);
     var n2 = document.getElementById("n2").value;
-    n2 = parseFloat(n2);
+    //n2 = parseFloat(n2);
 
     // Validacion de numeros
     var msjError1 = "Ingrese un numero valido."
@@ -13,6 +13,24 @@ function calcular() {
     } else if (isNaN(n2)) {
         alert(msjError1);
         return;
+    }
+
+    //Chequeo decimal
+    var esDecimal;
+    if (n1 % 1 == 0) {
+        esDecimal = false;
+        n1 = parseInt(n1);
+    } else {
+        esDecimal = true;
+        n1 = parseFloat(n1);
+    }
+
+    if (n2 % 1 == 0) {
+        esDecimal = false;
+        n2 = parseInt(n2);
+    } else {
+        esDecimal = true;
+        n2 = parseFloat(n2);
     }
 
     // Validacion de operaciones
@@ -47,13 +65,21 @@ function calcular() {
             break;
     }
 
-    // manejo de respuestas
+
+    /* 
+    manejo de respuestas
+    Limitar decimales
+    Limitar max y min de respuestas
+    */
     var msjResultado;
-    if (resultado > Math.pow(10, 10)) {
+    if (esDecimal) {
+        resultado = resultado.toFixed(3);
+    }
+    if (resultado >= Math.pow(10, 8)) {
         msjResultado = "El resultado es demasiado grande"
         alert(msjResultado);
         return;
-    } else if (resultado < Math.pow(10, -10)) {
+    } else if (resultado < -100000000) {
         msjResultado = "El resultado es demasiado pequeño"
         alert(msjResultado);
         return;
@@ -64,11 +90,11 @@ function calcular() {
     return document.getElementById("resultado").innerHTML = msjResultado;
 }
 
-// funcion para refrescar la pagina
+// funcion para refrescar la pagina 
 function recargar() {
     location.reload();
 }
 
-// llamado a la funcion
+// llamado a la funciones
 document.getElementById("botonCalc").addEventListener("click", calcular);
 document.getElementById("botonReset").addEventListener("click", recargar);
