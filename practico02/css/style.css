@@ -1,0 +1,8 @@
+#containerGame {
+    text-align: center;
+    border: 2px solid;
+}
+
+#gameInitMenu>div {
+    margin: 1%;
+}
