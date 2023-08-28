@@ -1,3 +1,15 @@
+const arrayJugadas = ["piedra", "papel", "tijeras"];
+
+function obtenerJugadaComputadora() {
+    return arrayJugadas[Math.floor(Math.random() * (2 - 0 + 1) + 0)];
+}
+
+function jugadaUsuario() {
+
+}
+function mostrarElecciones() {
+    document.getElementById("gameSelection").style.display = "flex";
+}
 
 
 function chequeoJug() {
@@ -6,8 +18,11 @@ function chequeoJug() {
     if (jugador === "") {
         alert(msj);
         return;
+    } else {
+        mostrarElecciones();
+        return jugador;
     }
-    return;
 }
 
 document.getElementById("buttonStartGame").addEventListener("click", chequeoJug);
+

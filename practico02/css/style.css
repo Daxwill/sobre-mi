@@ -1,8 +1,24 @@
+body {
+    background-color: darkgoldenrod;
+}
+
 #containerGame {
+    background-color: honeydew;
     text-align: center;
     border: 2px solid;
 }
 
 #gameInitMenu>div {
     margin: 1%;
+}
+
+#gameSelection {
+    display: none;
+    justify-content: center;
+}
+
+#piedra:hover,
+#tijera:hover,
+#papel:hover {
+    transform: scale(1.1);
 }
