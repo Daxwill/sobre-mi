@@ -1,8 +1,8 @@
 const arrayJugadas = ["piedra", "papel", "tijera"];
 const msjsFinales = [`<p>Empate</p>`, `<p>Esta jugada la ganó la Compu</p>`, `<p>Ganaste esta jugada!</p>`];
-var victoriasJug = 0;
-var victoriasPc = 0;
-var intentos = 0;
+let victoriasJug = 0;
+let victoriasPc = 0;
+let intentos = 0;
 
 // obtiene la mano aleatoria de la compu
 function obtenerJugadaComputadora() {
@@ -108,7 +108,7 @@ function chequeoVictorias() {
         }
     } else if (victoriasJug === 3) {
         ocultarElecciones();
-        document.getElementById("resultados").innerHTML = `Felictaciones ${nombre}! Ganaste!`;
+        document.getElementById("resultados").innerHTML = `Felicitaciones ${nombre}! Ganaste!`;
         botonReinicio()
     } else if (victoriasPc === 3) {
         document.getElementById("resultados").innerHTML = `A seguir participando ${nombre}! Te ganó la compu!`;
@@ -124,21 +124,19 @@ function botonReinicio() {
     botonR.setAttribute("id", "botonReinicio");
     const botonI = document.getElementById("buttonStartGame");
     document.getElementById("botonera").replaceChild(botonR, botonI);
-}
-// Para que vuelva el boton de comienzo de juego
-function botonComenzar() {
-    const botonI = document.createElement("button");
-    botonI.innerText = "Comenzar el Juego";
-    botonI.setAttribute("id", "buttonStartGame");
-    const botonR = document.getElementById("botonReinicio");
-    document.getElementById("botonera").replaceChild(botonI, botonR);
+    document.getElementById("botonReinicio").addEventListener("click", reiniciar);
 }
 
+// funcion de reinicio
+function reiniciar() {
+    window.location.reload();
+}
 
 document.getElementById("buttonStartGame").addEventListener("click", chequeoJug);
 document.getElementById("piedra").addEventListener("click", jugarPiedra);
 document.getElementById("tijera").addEventListener("click", jugarTijera);
 document.getElementById("papel").addEventListener("click", jugarPapel);
+
 
 
 
